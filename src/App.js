@@ -1,11 +1,22 @@
+import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Button from './Button';
+//import { Button, ButtonGroup } from '@chakra-ui/react';
 
-function App() {
+
+
+export default function App() {
+
+  const [text, setText] = useState('Hello');
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+         <h1>{text}</h1>
+         <Button text="Button" onClick={() => setText('Good buy')}/>
+        
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -22,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+  // <Button colorScheme='teal' size='lg' text="Button"/>
